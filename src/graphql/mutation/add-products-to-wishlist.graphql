@@ -1,0 +1,14 @@
+mutation AddProductsToWishlist(
+  $wishlistId: ID!
+  $wishlistItems: [WishlistItemInput!]!
+) {
+  addProductsToWishlist(
+    wishlistId: $wishlistId
+    wishlistItems: $wishlistItems
+  ) {
+    user_errors {
+      code
+      message
+    }
+  }
+}

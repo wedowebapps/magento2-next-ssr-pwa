@@ -1,0 +1,14 @@
+query getPaymentMethods($cartId: String!) {
+  cart(cart_id: $cartId) {
+    id
+    available_payment_methods {
+      code
+      title
+    }
+    selected_payment_method {
+      code
+      title
+    }
+    __typename
+  }
+}

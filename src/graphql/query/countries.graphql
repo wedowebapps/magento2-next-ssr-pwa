@@ -1,0 +1,8 @@
+query GetCountries {
+  countries {
+    id
+    full_name_english
+    two_letter_abbreviation
+    __typename
+  }
+}

@@ -1,0 +1,6 @@
+query GetFooterContent {
+  getFooterContent {
+    url
+    title
+  }
+}

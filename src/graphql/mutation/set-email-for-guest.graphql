@@ -1,0 +1,7 @@
+mutation SetGuestEmailOnCart($input: SetGuestEmailOnCartInput) {
+  setGuestEmailOnCart(input: $input) {
+    cart {
+      id
+    }
+  }
+}

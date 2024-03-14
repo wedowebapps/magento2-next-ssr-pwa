@@ -1,0 +1,22 @@
+mutation SetBillingAddressOnCart($input: SetBillingAddressOnCartInput) {
+  setBillingAddressOnCart(input: $input) {
+    cart {
+      billing_address {
+        firstname
+        lastname
+        street
+        city
+        region {
+          code
+          label
+        }
+        postcode
+        telephone
+        country {
+          code
+          label
+        }
+      }
+    }
+  }
+}

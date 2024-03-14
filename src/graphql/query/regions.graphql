@@ -1,0 +1,12 @@
+query GetRegions($countryCode: String!) {
+  country(id: $countryCode) {
+    id
+    available_regions {
+      id
+      code
+      name
+      __typename
+    }
+    __typename
+  }
+}

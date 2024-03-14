@@ -1,0 +1,9 @@
+query GetCustomerDetails {
+  customer {
+    firstname
+    lastname
+    email
+    gender
+    date_of_birth
+  }
+}

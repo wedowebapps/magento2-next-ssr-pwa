@@ -1,0 +1,96 @@
+query GetCustomerOrders(
+  $pageSize: Int!
+  $filter: CustomerOrdersFilterInput
+  $currentPage: Int!
+) {
+  customer {
+    firstname
+    lastname
+    orders(pageSize: $pageSize, filter: $filter, currentPage: $currentPage) {
+      items {
+        id
+        order_number
+        order_date
+        status
+        billing_address {
+          city
+          country_code
+          firstname
+          lastname
+          postcode
+          region
+          street
+          telephone
+          region_id
+        }
+        shipping_address {
+          city
+          country_code
+          firstname
+          lastname
+          postcode
+          region
+          street
+          telephone
+          region_id
+        }
+        items {
+          id
+          product_name
+          product_thumbnail
+          product_sale_price {
+            currency
+            value
+          }
+          product_sku
+          product_url_key
+          selected_options {
+            label
+            value
+          }
+          quantity_ordered
+        }
+        shipping_method
+        payment_methods {
+          name
+          type
+          additional_data {
+            name
+            value
+          }
+        }
+        total {
+          discounts {
+            amount {
+              currency
+              value
+            }
+            label
+          }
+          grand_total {
+            currency
+            value
+          }
+          subtotal {
+            currency
+            value
+          }
+          total_shipping {
+            currency
+            value
+          }
+          total_tax {
+            currency
+            value
+          }
+        }
+      }
+      total_count
+      page_info {
+        current_page
+        page_size
+        total_pages
+      }
+    }
+  }
+}

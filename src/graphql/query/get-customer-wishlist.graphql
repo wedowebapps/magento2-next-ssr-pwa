@@ -1,0 +1,45 @@
+query GetCustomerWishlist {
+  customer {
+    wishlist_v2(id: "0") {
+      id
+      items_count
+      items_v2(currentPage: 1, pageSize: 10) {
+        items {
+          id
+          description
+          product {
+            uid
+            name
+            sku
+            url_key
+            small_image {
+              url
+            }
+            thumbnail {
+              url
+            }
+            price_range {
+              minimum_price {
+                final_price {
+                  currency
+                  value
+                }
+              }
+              maximum_price {
+                final_price {
+                  currency
+                  value
+                }
+              }
+            }
+          }
+        }
+        page_info {
+          current_page
+          total_pages
+          page_size
+        }
+      }
+    }
+  }
+}

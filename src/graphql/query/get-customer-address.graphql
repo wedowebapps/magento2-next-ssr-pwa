@@ -1,0 +1,30 @@
+query GetCustomerAddressesForAddressBook {
+  customer {
+    addresses {
+      id
+      city
+      country_code
+      default_billing
+      default_shipping
+      firstname
+      lastname
+      middlename
+      postcode
+      region {
+        region
+        region_code
+        region_id
+        __typename
+      }
+      street
+      telephone
+      __typename
+    }
+    __typename
+  }
+  countries {
+    id
+    full_name_locale
+    __typename
+  }
+}

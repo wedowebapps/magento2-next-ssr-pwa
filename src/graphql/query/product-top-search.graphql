@@ -1,0 +1,40 @@
+query productTopSearch($search: String!) {
+  productTopSearch(search: $search) {
+    code
+    items {
+      id
+      name
+      sku
+      url_suffix
+      special_price
+      url_key
+      meta_title
+      price_range {
+        maximum_price {
+          final_price {
+            currency
+            value
+          }
+        }
+        minimum_price {
+          final_price {
+            currency
+            value
+          }
+        }
+      }
+      thumbnail {
+        url
+        label
+      }
+      small_image {
+        url
+        label
+        __typename
+      }
+      __typename
+    }
+    total_count
+    __typename
+  }
+}

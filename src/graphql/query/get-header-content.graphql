@@ -1,0 +1,6 @@
+query GetHeaderContent {
+  getHeaderContent {
+    url
+    title
+  }
+}

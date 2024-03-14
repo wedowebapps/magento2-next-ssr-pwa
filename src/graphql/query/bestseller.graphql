@@ -1,0 +1,50 @@
+query GetBestsellerProducts($pageSize: Int, $currentPage: Int) {
+  getBestsellerProducts(pageSize: $pageSize, currentPage: $currentPage) {
+    items {
+      id
+      name
+      sku
+      url_suffix
+      special_price
+      price_range {
+        maximum_price {
+          final_price {
+            currency
+            value
+          }
+        }
+        minimum_price {
+          final_price {
+            currency
+            value
+          }
+        }
+      }
+      url_key
+      small_image {
+        url
+        label
+        __typename
+      }
+      media_gallery_entries {
+        uid
+        label
+        position
+        disabled
+        file
+        media_type
+        video_content {
+          video_url
+          video_title
+        }
+      }
+      __typename
+    }
+    total_count
+    page_info {
+      __typename
+      current_page
+      page_size
+    }
+  }
+}

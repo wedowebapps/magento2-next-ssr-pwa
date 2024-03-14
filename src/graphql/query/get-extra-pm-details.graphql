@@ -1,0 +1,5 @@
+query GetExtraPmDetails($paymentMethod: String) {
+  getExtraPMDetails(payment_method: $paymentMethod) {
+    instruction
+  }
+}

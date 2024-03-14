@@ -1,0 +1,13 @@
+mutation RemoveProductsFromWishlist(
+  $wishlistId: ID!
+  $wishlistItemIds: [ID!]!
+) {
+  removeProductsFromWishlist(
+    wishlistId: $wishlistId
+    wishlistItemsIds: $wishlistItemIds
+  ) {
+    wishlist {
+      items_count
+    }
+  }
+}

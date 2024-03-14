@@ -1,0 +1,69 @@
+mutation UpdateCartItems($input: UpdateCartItemsInput) {
+  updateCartItems(input: $input) {
+    cart {
+      id
+      items {
+        uid
+        id
+        product {
+          id
+          uid
+          name
+          sku
+          url_key
+          thumbnail {
+            url
+          }
+          small_image {
+            url
+          }
+          price_tiers {
+            final_price {
+              currency
+              value
+            }
+            discount {
+              percent_off
+            }
+            quantity
+          }
+          stock_status
+          ... on ConfigurableProduct {
+            variants {
+              attributes {
+                uid
+              }
+              product {
+                uid
+                name
+                small_image {
+                  url
+                }
+              }
+            }
+          }
+        }
+        prices {
+          price {
+            currency
+            value
+          }
+        }
+        quantity
+        errors {
+          code
+          message
+        }
+        ... on ConfigurableCartItem {
+          configurable_options {
+            id
+            configurable_product_option_uid
+            option_label
+            configurable_product_option_value_uid
+            value_label
+          }
+        }
+      }
+    }
+  }
+}

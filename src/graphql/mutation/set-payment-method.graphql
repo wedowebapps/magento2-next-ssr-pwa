@@ -1,0 +1,12 @@
+mutation SetPaymentMethodOnCart($cartId: String!, $code: String!) {
+  setPaymentMethodOnCart(
+    input: { cart_id: $cartId, payment_method: { code: $code } }
+  ) {
+    cart {
+      selected_payment_method {
+        code
+        title
+      }
+    }
+  }
+}

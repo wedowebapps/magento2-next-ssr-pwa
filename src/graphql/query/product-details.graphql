@@ -1,0 +1,153 @@
+query getProducts($url_key: String) {
+  products(filter: { url_key: { eq: $url_key } }) {
+    __typename
+    items {
+      uid
+      name
+      sku
+      url_key
+      meta_description
+      meta_keyword
+      meta_title
+      color
+      stock_status
+      rating_summary
+      small_image {
+        url
+      }
+      thumbnail {
+        url
+        label
+      }
+      price_range {
+        maximum_price {
+          final_price {
+            currency
+            value
+          }
+        }
+        minimum_price {
+          final_price {
+            currency
+            value
+          }
+        }
+      }
+      special_price
+      media_gallery_entries {
+        uid
+        label
+        position
+        disabled
+        file
+        media_type
+        video_content {
+          video_url
+          video_title
+        }
+      }
+      related_products {
+        uid
+        name
+        sku
+        url_key
+        meta_description
+        meta_keyword
+        meta_title
+        color
+        stock_status
+        rating_summary
+        categories {
+          name
+        }
+        small_image {
+          url
+        }
+        thumbnail {
+          url
+          label
+        }
+        price_range {
+          maximum_price {
+            discount {
+              amount_off
+            }
+            final_price {
+              currency
+              value
+            }
+          }
+          minimum_price {
+            discount {
+              amount_off
+            }
+            final_price {
+              currency
+              value
+            }
+          }
+        }
+      }
+
+      ... on ConfigurableProduct {
+        configurable_options {
+          id
+          uid
+          attribute_id
+          label
+          position
+          use_default
+          default_option_value
+          attribute_code
+          values {
+            value_index
+            uid
+            label
+            swatch_data {
+              value
+            }
+          }
+          product_id
+        }
+        variants {
+          product {
+            id
+            name
+            sku
+            attribute_set_id
+            ... on PhysicalProductInterface {
+              weight
+            }
+
+            media_gallery_entries {
+              uid
+              label
+              position
+              disabled
+              file
+              media_type
+              video_content {
+                video_url
+                video_title
+              }
+            }
+            price_range {
+              minimum_price {
+                final_price {
+                  value
+                  currency
+                }
+              }
+            }
+          }
+          attributes {
+            uid
+            label
+            code
+            value_index
+          }
+        }
+      }
+    }
+  }
+}

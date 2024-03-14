@@ -1,0 +1,8 @@
+query GetHomePageContent {
+  getHomePageContent {
+    banner_image
+    title
+    sub_title
+    description
+  }
+}
