@@ -46,7 +46,7 @@ Comprehensive Order History Tracking:
 - Provide users with visibility into their order history, allowing them to track past purchases and monitor order statuses effectively.
 ## Demo
 
-https://wedocommerce.wedowebapps.com/
+https://demo.wedowebapps.com/
 
 
 ## Run Locally
